@@ -18,6 +18,12 @@ app.use(cors({
   allowedHeaders: ['Content-Type', 'Authorization']
   // Credentials removed to prevent issues with wildcard origins
 }));
+
+// Handle preflight OPTIONS requests
+app.options('*', function (req, res) {
+  res.sendStatus(200);
+});
+
 app.use(json());
 app.use(requestLogger);
 
