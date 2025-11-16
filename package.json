@@ -9,7 +9,8 @@
     "dev": "ts-node-dev --require dotenv/config src/server.ts",
     "db:migrate": "npx prisma migrate dev",
     "db:generate": "npx prisma generate",
-    "db:seed": "ts-node prisma/seed.ts"
+    "db:seed": "ts-node prisma/seed.ts",
+    "postinstall": "npx prisma generate"
   },
   "dependencies": {
     "@prisma/client": "^5.0.0",
