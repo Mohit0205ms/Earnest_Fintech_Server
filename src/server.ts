@@ -15,8 +15,8 @@ const PORT = process.env.PORT || 3000;
 app.use(cors({
   origin: process.env.FRONTEND_URL || '*',
   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-  credentials: true
+  allowedHeaders: ['Content-Type', 'Authorization']
+  // Credentials removed to prevent issues with wildcard origins
 }));
 app.use(json());
 app.use(requestLogger);
